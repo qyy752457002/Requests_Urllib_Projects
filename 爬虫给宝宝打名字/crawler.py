@@ -34,7 +34,7 @@ def get_score(xing, ming):
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
     }
 
-    resp = requests.get(url, data = urlencode(data), headers = headers)
+    resp = requests.post(url, data = urlencode(data), headers = headers)
 
     # print(resp.status_code)
     resp.encoding = "gb2312"
@@ -54,7 +54,6 @@ def get_score(xing, ming):
         wuge = fonts[1].get_text().replace("分", "").strip()
 
     return "%s%s"%(xing, ming),bazi,wuge
-
 
 if __name__ == "__main__":
 
